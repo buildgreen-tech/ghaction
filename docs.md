@@ -31,3 +31,5 @@ CD: This shared repository is deployed to production by operations team
 
 - GitHub actions components
   - https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
+
+https://docs.github.com/en/code-security/
