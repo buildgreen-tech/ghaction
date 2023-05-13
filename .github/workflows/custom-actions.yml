@@ -1,12 +1,15 @@
 name: custom-actions
 run-name: ${{github.workflow}} by ${{github.actor}}
 on: [push]
+
 jobs:
   setup-bats:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: hello-world
+      - id: greet
         uses: ./.github/actions/hello-world-action
-      - run: echo $${{steps.hello-world.outputs.msg}}
+        env:
+          MSG: "Hello"
+      - run: echo $${{steps.greet.outputs.msg}}
         shell: bash
