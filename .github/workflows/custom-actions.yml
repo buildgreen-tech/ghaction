@@ -1,5 +1,5 @@
 name: custom-actions
-run-name: ${{github.name}} by ${{github.actor}}
+run-name: ${{github.workflow}} by ${{github.actor}}
 on: [push]
 jobs:
   setup-bats:

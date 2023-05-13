@@ -1,10 +1,20 @@
-name: "Example"
-description: "Receives file and generates output"
+name: "Welcome message"
+author: "premchalmeti"
+description: "Accepts username and outputs a welcome message"
 inputs:
-  file-path: # id of input
-    description: "Path to test script"
-    required: true
-    default: "test-file.js"
+  username: # id of input
+    description: "Name of the user to greet"
+    required: false
+    default: "Premkumar"
 outputs:
-  results-file: # id of output
-    description: "Path to results file"
+  msg: # id of output
+    description: "Greet message"
+    value: ${{steps.msg-generator.outputs.msg}}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{inputs.username}}
+      shell: bash
+    - id: msg-generator
+      run: echo "msg=$(echo $MSG)" >> $GITHUB_OUTPUT
+      shell: bash
