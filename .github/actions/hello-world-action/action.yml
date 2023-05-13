@@ -16,5 +16,5 @@ runs:
     - run: echo Hello ${{inputs.username}}
       shell: bash
     - id: msg-generator
-      run: echo "msg=$(echo $MSG)" >> $GITHUB_OUTPUT
+      run: echo "msg=$MSG ${{inputs.username}}" >> $GITHUB_OUTPUT
       shell: bash
