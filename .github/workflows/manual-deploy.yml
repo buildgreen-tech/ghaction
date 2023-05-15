@@ -15,4 +15,4 @@ jobs:
   print-tag:
     runs-on: ubuntu-20.04
     steps:
-      run: echo ${{inputs.project}}
+      - run: echo ${{inputs.project}}
