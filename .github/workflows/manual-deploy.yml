@@ -1,18 +1,19 @@
 name: Deploy
-run-name: ${{github.ref}} deploy on ${{inputs.environment}}
 on:
   workflow_dispatch:
     inputs:
       project:
-        description: "name of nx project to deploy"
+        description: "name of product to deploy"
         required: true
-        type: choice
-        options:
-          - operator
-          - marketplace
-          - adkom
 jobs:
-  print-tag:
-    runs-on: ubuntu-20.04
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo ${{inputs.project}}
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Building ${{github.event.inputs.project}}
+        run: echo 'Build'
+      - name: Deploying ${{github.event.inputs.project}}
+        run: echo 'Deploy'
