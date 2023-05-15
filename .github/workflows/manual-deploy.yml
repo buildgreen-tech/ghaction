@@ -1,4 +1,4 @@
-name: "Deploy"
+name: Deploy
 run-name: ${{github.ref}} deploy on ${{inputs.environment}}
 on:
   workflow_dispatch:
