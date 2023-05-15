@@ -1,0 +1,18 @@
+name: "Deploy"
+run-name: "${{github.ref}} deploy on ${{inputs.environment}}"
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "name of nx project to deploy"
+        required: true
+        type: choice
+        options:
+          - operator
+          - marketplace
+          - adkom
+jobs:
+  print-tag:
+    runs-on: ubuntu-20.04
+    steps:
+      run: echo ${{inputs.project}}

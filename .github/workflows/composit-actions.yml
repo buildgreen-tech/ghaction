@@ -3,6 +3,9 @@ run-name: ${{github.workflow}} by ${{github.actor}}
 on: [push]
 jobs:
   greet:
+    enivronment:
+      name: production
+      url: https://premchalmeti.com
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
