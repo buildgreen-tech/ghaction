@@ -1,6 +1,9 @@
 name: setup-node
 run-name: ${{github.workflow}} by ${{github.actor}}
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - "main"
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
