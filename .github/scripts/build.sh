@@ -2,5 +2,4 @@
 # -e: echo every executed command
 # -x: exit on error
 set -ex
-echo Building
-echo $NAME
+echo Build triggered by $USER >> $LOG_FILE

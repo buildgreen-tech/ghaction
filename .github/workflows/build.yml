@@ -1,5 +1,8 @@
 name: Build
 on: [push]
+env:
+  ARTIFACT_DIR: /tmp/artifacts/
+  LOG_FILE: $ARTIFACT_DIR/output.log
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,16 +10,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Creating artifacts folder
-        run: mkdir -p /tmp/artifacts
+        run: mkdir -p $ARTIFACT_DIR
       - name: "Running build.sh"
         run: ./.github/scripts/build.sh
         shell: bash
         env:
-          NAME: "Mr. Prem"
+          USER: ${{github.actor}}
       - run: |
-          expr 1 + 1 > /tmp/artifacts/output.log
+          echo Running custom expressions $(expr 1 + 1) >> $LOG_FILE
       - name: Upload log to artifact
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          path: /tmp/artifacts/output.log
+          path: $LOG_FILE
