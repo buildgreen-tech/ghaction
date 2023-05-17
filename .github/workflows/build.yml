@@ -3,9 +3,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
-    - name: "Running build"
-      run: ./.github/scripts/build.sh
-      shell: bash
-      env:
-        NAME: "Mr. Prem"
+    steps:
+      - name: "Running build.sh"
+        run: ./.github/scripts/build.sh
+        shell: bash
+        env:
+          NAME: "Mr. Prem"
