@@ -1,0 +1,11 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - name: "Running build"
+      run: ./.github/scripts/build.sh
+      shell: bash
+      env:
+        NAME: "Mr. Prem"

@@ -1,0 +1,9 @@
+- https://www.phylum.io/
+- https://github.com/marketplace/circleci
+- https://github.com/marketplace/actions/securestack-secrets-analysis
+
+- https://github.com/marketplace/actions/first-interaction
+- https://github.com/marketplace/actions/slack-send
+- https://github.com/marketplace/actions/twilio-sms
+- https://github.com/marketplace/actions/github-action-event-slack-notifier
+- 
