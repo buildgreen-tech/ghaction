@@ -1,0 +1,18 @@
+name: manual dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project"
+        required: true
+        type: choice
+        options:
+          - supply
+          - adkom
+          - marketplace
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "deploying project: ${{ inputs.project }}"
