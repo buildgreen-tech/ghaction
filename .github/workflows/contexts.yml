@@ -8,6 +8,12 @@ on:
         default: "warning"
 env:
   FIRST: "foggle"
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
@@ -28,5 +34,6 @@ jobs:
         run: echo '${{env}}'
         env:
           LAST: "hoogle"
+      - run: sleep 10
       - name: vars
         run: echo ${{vars}}
