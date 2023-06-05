@@ -1,5 +1,11 @@
 name: Contexts
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        required: true
+        default: "warning"
 env:
   FIRST: "foggle"
 jobs:
