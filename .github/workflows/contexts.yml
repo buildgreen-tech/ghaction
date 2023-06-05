@@ -10,8 +10,6 @@ jobs:
         run: echo '${{ toJson(github)}}'
       - name: job
         run: echo '${{toJson(job)}}'
-      - name: jobs
-        run: echo '${{toJson(jobs)}}'
       - name: steps
         run: echo '${{toJson(steps)}}'
       - name: runner
