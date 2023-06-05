@@ -1,3 +1,4 @@
+name: manual diss
 on:
   workflow_dispatch:
     inputs:
