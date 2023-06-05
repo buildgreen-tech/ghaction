@@ -5,7 +5,6 @@ env:
   LOG_FILE: /tmp/artifacts/output.log
 jobs:
   build:
-    if: ${{false}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

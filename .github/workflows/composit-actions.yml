@@ -3,7 +3,6 @@ run-name: ${{github.workflow}} by ${{github.actor}}
 on: [push]
 jobs:
   greet:
-    if: ${{false}}
     env:
       name: production
       url: https://premchalmeti.com
