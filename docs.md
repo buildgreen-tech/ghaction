@@ -33,3 +33,9 @@ CD: This shared repository is deployed to production by operations team
   - https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
 
 https://docs.github.com/en/code-security/
+
+- GitHub:
+  - secrets:
+    - sensitive information
+  - vars:
+    - organization/repository/environment level non-sensitive configuration information
