@@ -1,19 +1,28 @@
 name: Contexts
 on: push
-
+env:
+  FIRST: "foggle"
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub context
+      - name: github
         run: echo '${{ toJson(github)}}'
-      - name: Job context
+      - name: job
         run: echo '${{toJson(job)}}'
-      - name: Steps
+      - name: jobs
+        run: echo '${{toJson(jobs)}}'
+      - name: steps
         run: echo '${{toJson(steps)}}'
-      - name: Runner
+      - name: runner
         run: echo '${{toJson(runner)}}'
       - name: strategy
         run: echo '${{toJson(strategy)}}'
       - name: matrix
         run: echo '${{matrix}}'
+      - name: env
+        run: echo '${{env}}'
+        env:
+          LAST: "hoogle"
+      - name: vars
+        run: echo ${{vars}}
