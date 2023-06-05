@@ -1,0 +1,19 @@
+name: Contexts
+on: push
+
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub context
+        run: echo '${{ toJson(github)}}'
+      - name: Job context
+        run: echo '${{toJson(job)}}'
+      - name: Steps
+        run: echo '${{toJson(steps)}}'
+      - name: Runner
+        run: echo '${{toJson(runner)}}'
+      - name: strategy
+        run: echo '${{toJson(strategy)}}'
+      - name: matrix
+        run: echo '${{matrix}}'

@@ -3,7 +3,8 @@ run-name: ${{github.workflow}} by ${{github.actor}}
 on: [push]
 jobs:
   greet:
-    enivronment:
+    if: ${{false}}
+    env:
       name: production
       url: https://premchalmeti.com
     runs-on: ubuntu-latest

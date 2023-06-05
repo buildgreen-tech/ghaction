@@ -2,15 +2,17 @@ name: Build
 on: [push]
 env:
   ARTIFACT_DIR: /tmp/artifacts/
-  LOG_FILE: $ARTIFACT_DIR/output.log
+  LOG_FILE: /tmp/artifacts/output.log
 jobs:
   build:
+    if: ${{false}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Creating artifacts folder
         run: mkdir -p $ARTIFACT_DIR
+        shell: bash
       - name: "Running build.sh"
         run: ./.github/scripts/build.sh
         shell: bash
